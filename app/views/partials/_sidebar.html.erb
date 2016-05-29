@@ -1,0 +1,19 @@
+<% if controller_name == 'about' %>
+    <div class="well">
+        <h3>Location Info</h3>
+        <ul>
+            <li>The BookStore</li>
+            <li>499 Massachusetts Ave, Unit 2</li>
+            <li>Boston, MA 02110</li>
+            <li>Email: support@thebookstore.com</li>
+        </ul>
+    </div>
+<% end %>
+
+<% if controller_name == 'books' and ['index', 'show'].include? action_name %>
+    <div class="list-group">
+        <% @categories.each do |category| %>
+            <%= link_to category.name, category_path(category.id), class:"list-group-item" %>
+        <% end %>
+    </div>
+<% end %>
